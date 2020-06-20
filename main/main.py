@@ -5,6 +5,7 @@ from src.main.player import player
 pg = pygame
 pg.init()
 
+player.init(pg)
 screen = pg.display.set_mode((800, 600))
 
 # Frames Per Seconds variable
@@ -13,13 +14,16 @@ fps = 0
 font = pg.font.Font(None, 30)
 
 # Player image
-img = player.get_image(pg)
+img = player.get_image()
 
 # Game Loop
 running = True
 while running:
+
+    player.update_movement(pygame.key.get_pressed())
+
     # Clears all from the screen
-    screen.fill((0, 128, 0))
+    screen.fill((0, 0, 0))
 
     # Prepare text to be rendered
     f = font.render(str(round(((time.time() * 1000) - fps))), True, pg.Color('white'))
@@ -28,7 +32,7 @@ while running:
     fps = int(round(time.time() * 1000))
 
     # Render image now
-    screen.blit(img, (10, 10))
+    screen.blit(img, (10, player.player_y))
 
     # What the close button does
     for event in pg.event.get():
