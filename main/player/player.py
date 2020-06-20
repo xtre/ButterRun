@@ -1,5 +1,3 @@
 
-from src.main.main import pg
-
-# Image variable
-img = pg.image.load('img.png')
+def get_image(test):
+    return test.image.load('img.png')
