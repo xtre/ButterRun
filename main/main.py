@@ -1,6 +1,8 @@
 import pygame
 import time
 
+from src.main import player
+
 pg = pygame
 
 pg.init()
@@ -11,9 +13,6 @@ screen = pg.display.set_mode((800, 600))
 fps = 0
 # Text font entity from Pygame
 font = pg.font.Font(None, 30)
-
-# Image variable
-img = pg.image.load('img.png')
 
 # Game Loop
 running = True
@@ -28,7 +27,7 @@ while running:
     fps = int(round(time.time() * 1000))
 
     # Render image now
-    screen.blit(img, (10, 10))
+    screen.blit(player.img, (10, 10))
 
     # What the close button does
     for event in pg.event.get():
