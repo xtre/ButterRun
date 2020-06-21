@@ -4,7 +4,7 @@ from src.main.player import player
 from src.main.player import player2
 from src.main.connection import client
 
-client.init(input("Ask user for something."))
+client.init(input("Enter Address"))
 
 pg = pygame
 pg.init()
