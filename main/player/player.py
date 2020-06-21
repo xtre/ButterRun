@@ -13,10 +13,6 @@ def init(test):
     img = test.image.load('Paddle.png')
 
 
-def get_image():
-    return img
-
-
 def update_movement(keys):
     global player_y
     if keys[pygame.K_w] and player_y > 0:
