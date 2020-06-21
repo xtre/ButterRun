@@ -37,9 +37,7 @@ while running:
 
     # Render image now
     screen.blit(player.img, (10, player.player_y))
-    # print(int(player2.player_y))
-    if int(player2.player_y) < 600:
-        screen.blit(player2.img, (800 - 32, int(player2.player_y)))
+    screen.blit(player2.img, (800 - 32, int(player2.player_y)))
 
     # What the close button does
     for event in pg.event.get():
