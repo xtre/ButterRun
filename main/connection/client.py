@@ -20,7 +20,7 @@ def init(address):
 
 
 def send_position(py):
-    s.send((str(py)+":").encode('UTF-8'))
+    s.send((str(py) + ":").encode('UTF-8'))
 
 
 def connection():
@@ -32,11 +32,6 @@ def connection():
                 print("Received no data")
                 break
             player2_y = int(str(data.decode("utf-8")).split(":")[-2])
-            # data = s.recv(32)
-            # print(data)
-            # player_y = data
-            # if not data:
-            #     break
     except Exception as ex:
         print(ex)
 
